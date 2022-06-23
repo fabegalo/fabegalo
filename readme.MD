@@ -43,7 +43,7 @@
 
 ###
 
-<img href="https://github.com/fabegalo/fabegalo/blob/main/snake.svg" alt="Snake animation" />
+<img href="https://raw.githubusercontent.com/fabegalo/fabegalo/main/snake.svg" alt="Snake animation" />
 
 ###
 
