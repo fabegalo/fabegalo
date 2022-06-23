@@ -44,7 +44,7 @@
 ###
 
 <img href="https://github.com/fabegalo/fabegalo/blob/main/snake.svg" alt="Snake animation" />
-
+["https://github.com/fabegalo/fabegalo/blob/main/snake.svg"](https://github.com/fabegalo/fabegalo/blob/main/snake.svg)
 ###
 
 <div align="center">
