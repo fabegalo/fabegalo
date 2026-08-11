@@ -69,11 +69,6 @@ Sou graduado em Análise e Desenvolvimento de Sistemas e curso Engenharia de Sof
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=fabegalo&theme=github-dark-blue&hide_border=true&locale=pt_BR&date_format=j%20M%5B%20Y%5D" />
-  <img src="https://streak-stats.demolab.com?user=fabegalo&theme=default&hide_border=true&locale=pt_BR&date_format=j%20M%5B%20Y%5D" height="165" alt="Sequência de contribuições" />
-</picture>
-
-<picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=fabegalo&theme=react-dark&hide_border=true&area=true&custom_title=Atividade%20de%20contribui%C3%A7%C3%B5es" />
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=fabegalo&theme=github-compact&hide_border=true&area=true&custom_title=Atividade%20de%20contribui%C3%A7%C3%B5es" width="100%" alt="Atividade de contribuições" />
 </picture>
