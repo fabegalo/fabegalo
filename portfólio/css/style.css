@@ -21,12 +21,24 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-light);
-    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
 .container {
@@ -169,6 +181,7 @@ ul {
 section {
     padding: 80px 0;
     text-align: center;
+    scroll-margin-top: 90px;
 }
 
 section h2, section h3 {
@@ -612,6 +625,28 @@ section h2, section h3 {
 .reveal-on-scroll.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal-on-scroll {
+        opacity: 1;
+        transform: none;
+    }
+
+    .skill-item:hover,
+    .project-card:hover,
+    .btn:hover {
+        transform: none;
+    }
 }
 
 

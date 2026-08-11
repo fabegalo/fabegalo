@@ -6,26 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const navList = document.querySelector('.nav-list');
 
     if (hamburger && navList) {
-        hamburger.addEventListener('click', () => {
-            navList.classList.toggle('active');
+        const setMenu = (open) => {
+            navList.classList.toggle('active', open);
+            hamburger.setAttribute('aria-expanded', String(open));
             const icon = hamburger.querySelector('i');
-            if (navList.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
+            icon.classList.toggle('fa-times', open);
+            icon.classList.toggle('fa-bars', !open);
+        };
+
+        hamburger.addEventListener('click', () => {
+            setMenu(!navList.classList.contains('active'));
         });
 
         navList.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navList.classList.contains('active')) {
-                    navList.classList.remove('active');
-                    hamburger.querySelector('i').classList.remove('fa-times');
-                    hamburger.querySelector('i').classList.add('fa-bars');
-                }
-            });
+            link.addEventListener('click', () => setMenu(false));
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navList.classList.contains('active')) {
+                setMenu(false);
+                hamburger.focus();
+            }
         });
     }
 
@@ -89,14 +90,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const subject = subjectInput.value;
                 const message = messageInput.value;
 
-                // Abre o Gmail com os campos preenchidos
-                const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=fabegalo@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-                    `Nome: ${name}\nEmail: ${email}\n\n${message}`
-                )}`;
+                const body = encodeURIComponent(`Nome: ${name}\nEmail: ${email}\n\n${message}`);
+                const su = encodeURIComponent(subject);
 
-                window.open(gmailLink, '_blank');
+                // Abre o Gmail com os campos preenchidos; se o pop-up for bloqueado,
+                // cai para o cliente de e-mail padrão via mailto:
+                const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=fabegalo@gmail.com&su=${su}&body=${body}`;
+                const popup = window.open(gmailLink, '_blank', 'noopener');
 
-                formMessage.textContent = 'Gmail aberto com a mensagem preenchida. Basta clicar em "Enviar".';
+                if (popup) {
+                    formMessage.textContent = 'Gmail aberto com a mensagem preenchida. Basta clicar em "Enviar".';
+                } else {
+                    window.location.href = `mailto:fabegalo@gmail.com?subject=${su}&body=${body}`;
+                    formMessage.textContent = 'Abrindo seu cliente de e-mail com a mensagem preenchida.';
+                }
+
                 formMessage.classList.add('success');
                 formMessage.style.display = 'block';
                 contactForm.reset();
@@ -104,6 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 formMessage.textContent = 'Por favor, preencha todos os campos obrigatórios corretamente.';
                 formMessage.classList.add('error');
                 formMessage.style.display = 'block';
+
+                const firstError = contactForm.querySelector('.error-message:not(:empty)');
+                if (firstError) {
+                    const field = firstError.parentElement.querySelector('input, textarea');
+                    if (field) field.focus();
+                }
             }
         });
     }
@@ -113,17 +127,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // --------------------------------------------------
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+            if (!targetId || targetId === '#') return;
 
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - (document.querySelector('.main-header')?.offsetHeight || 0),
-                    behavior: 'smooth'
-                });
-            }
+            const targetElement = document.getElementById(targetId.slice(1));
+            if (!targetElement) return;
+
+            e.preventDefault();
+            window.scrollTo({
+                top: targetElement.offsetTop - (document.querySelector('.main-header')?.offsetHeight || 0),
+                behavior: 'smooth'
+            });
         });
     });
 
@@ -131,23 +145,43 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Efeito Interativo 2: Revelar Elementos ao Rolar
     // --------------------------------------------------
     const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    const revealAll = () => revealElements.forEach(el => el.classList.add('active'));
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
+    if (!('IntersectionObserver' in window)) {
+        // Sem suporte ao observer, o conteúdo aparece direto.
+        revealAll();
+    } else {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
         });
-    }, observerOptions);
 
-    revealElements.forEach(element => {
-        observer.observe(element);
-    });
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Rede de segurança: as seções começam com opacity: 0, então se nada
+        // for revelado a página inteira fica invisível. Se depois de 1s
+        // continuar tudo escondido, mostra o conteúdo sem animação.
+        setTimeout(() => {
+            const revelados = document.querySelectorAll('.reveal-on-scroll.active').length;
+            if (revelados === 0) revealAll();
+        }, 1000);
+    }
+
+    // --------------------------------------------------
+    // 5. Ano do rodapé
+    // --------------------------------------------------
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 });

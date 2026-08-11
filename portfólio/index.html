@@ -6,21 +6,28 @@
     <meta name="description" content="Portfólio pessoal de Fabricio - Desenvolvedor. Conheça meus projetos e habilidades.">
     <meta name="keywords" content="portfólio, desenvolvedor, HTML, CSS, JavaScript, web design, responsivo">
     <meta name="author" content="fabegalo">
+    <meta name="theme-color" content="#343a40">
     <title>Início - Fabricio | Portfólio</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Fabricio | Portfólio">
+    <meta property="og:description" content="Engenheiro Mobile com experiência em Kotlin, Swift, Flutter, Laravel e APIs REST.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/53371411?v=4">
+    <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="https://placehold.co/32x32/000000/FFFFFF?text=PF" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23007bff'/><text x='16' y='23' font-size='18' font-family='sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'>F</text></svg>" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <noscript><style>.reveal-on-scroll { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body>
     <header class="main-header">
         <div class="container">
             <h1 class="logo"><a href="index.html">Portfólio</a></h1>
             <nav class="main-nav">
-                <button class="hamburger-menu" aria-label="Abrir menu de navegação">
-                    <i class="fas fa-bars"></i>
+                <button class="hamburger-menu" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-list">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
-                <ul class="nav-list">
-                    <li><a href="index.html" class="active">Início</a></li>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index.html" class="active" aria-current="page">Início</a></li>
                     <li><a href="about.html">Sobre Mim</a></li>
                     <li><a href="projects.html">Projetos</a></li>
                     <li><a href="contact.html">Contato</a></li>
@@ -39,7 +46,7 @@
                     <a href="contact.html" class="btn secondary-btn">Entrar em Contato</a>
                 </div>
                 <div class="hero-image">
-                    <img src="https://media.licdn.com/dms/image/v2/C4E03AQEdNjem2wg4rg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1645542726133?e=1757548800&v=beta&t=e3CfLbzveFh781xNsDtWAOAXf-FBUK_p867McLoCQKs" alt="Foto de perfil de Fabricio" class="rounded-image">
+                    <img src="https://avatars.githubusercontent.com/u/53371411?v=4" alt="Foto de perfil de Fabricio" class="rounded-image" width="350" height="350">
                 </div>
             </div>
         </section>
@@ -95,10 +102,10 @@
 
     <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2025 fabegalo. Todos os direitos reservados.</p>
+            <p>&copy; <span id="currentYear">2026</span> fabegalo. Todos os direitos reservados.</p>
             <div class="social-links">
-                <a href="https://github.com/fabegalo" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/fabegalo" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/fabegalo" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/fabricio-galo-87516316a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
             </div>
         </div>
     </footer>

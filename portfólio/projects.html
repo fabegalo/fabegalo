@@ -6,23 +6,30 @@
     <meta name="description" content="Confira os projetos de desenvolvimento criados por Fabricio.">
     <meta name="keywords" content="projetos, portfólio, desenvolvimento web, HTML, CSS, JavaScript, responsivo">
     <meta name="author" content="fabegalo">
+    <meta name="theme-color" content="#343a40">
     <title>Projetos - Fabricio | Portfólio</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Projetos - Fabricio | Portfólio">
+    <meta property="og:description" content="Projetos de desenvolvimento criados por Fabricio.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/53371411?v=4">
+    <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="https://placehold.co/32x32/000000/FFFFFF?text=PF" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23007bff'/><text x='16' y='23' font-size='18' font-family='sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'>F</text></svg>" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <noscript><style>.reveal-on-scroll { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body>
     <header class="main-header">
         <div class="container">
             <h1 class="logo"><a href="index.html">Portfólio</a></h1>
             <nav class="main-nav">
-                <button class="hamburger-menu" aria-label="Abrir menu de navegação">
-                    <i class="fas fa-bars"></i>
+                <button class="hamburger-menu" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-list">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
-                <ul class="nav-list">
+                <ul class="nav-list" id="nav-list">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="about.html">Sobre Mim</a></li>
-                    <li><a href="projects.html" class="active">Projetos</a></li>
+                    <li><a href="projects.html" class="active" aria-current="page">Projetos</a></li>
                     <li><a href="contact.html">Contato</a></li>
                 </ul>
             </nav>
@@ -39,20 +46,19 @@
                 <div class="projects-grid">
 
                     <div class="project-card">
-                        <img src="https://placehold.co/400x250/6f42c1/FFFFFF?text=Banking+System+C" alt="Captura do Sistema Bancário em C">
+                        <img src="https://placehold.co/400x250/6f42c1/FFFFFF?text=Banking+System+C" alt="Captura do Sistema Bancário em C" width="400" height="250" loading="lazy">
                         <h3>Sistema Bancário em C</h3>
                         <p>Sistema completo em C com login, cadastro de usuários, contas bancárias e operações de depósito e saque.</p>
                         <div class="project-tech">
                             <span>C</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/fabegalo/Projeto-Sistema-Bancario-em-C" target="_blank" class="btn small-btn">Ver Projeto</a>
-                            <a href="https://github.com/fabegalo/Projeto-Sistema-Bancario-em-C" target="_blank" class="btn small-btn github-btn"><i class="fab fa-github"></i> Código</a>
+                            <a href="https://github.com/fabegalo/Projeto-Sistema-Bancario-em-C" target="_blank" rel="noopener noreferrer" class="btn small-btn github-btn"><i class="fab fa-github" aria-hidden="true"></i> Ver Código</a>
                         </div>
                     </div>
 
                     <div class="project-card">
-                        <img src="https://placehold.co/400x250/17a2b8/FFFFFF?text=Flutter+Covid19+App" alt="Captura do app Covid-19 em Flutter">
+                        <img src="https://placehold.co/400x250/17a2b8/FFFFFF?text=Flutter+Covid19+App" alt="Captura do app Covid-19 em Flutter" width="400" height="250" loading="lazy">
                         <h3>App Covid‑19 em Flutter</h3>
                         <p>App em Flutter que exibe casos de Covid‑19 por país e estado, consumindo dados via API em PHP.</p>
                         <div class="project-tech">
@@ -61,21 +67,19 @@
                             <span>PHP (API)</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/fabegalo/flutter_app_covid19" target="_blank" class="btn small-btn">Ver Projeto</a>
-                            <a href="https://github.com/fabegalo/flutter_app_covid19" target="_blank" class="btn small-btn github-btn"><i class="fab fa-github"></i> Código</a>
+                            <a href="https://github.com/fabegalo/flutter_app_covid19" target="_blank" rel="noopener noreferrer" class="btn small-btn github-btn"><i class="fab fa-github" aria-hidden="true"></i> Ver Código</a>
                         </div>
                     </div>
 
                     <div class="project-card">
-                        <img src="https://placehold.co/400x250/28a745/FFFFFF?text=Silhouette+Water" alt="Captura do projeto Silhouette Water">
+                        <img src="https://placehold.co/400x250/28a745/FFFFFF?text=Silhouette+Water" alt="Captura do projeto Silhouette Water" width="400" height="250" loading="lazy">
                         <h3>Silhouette Water (Python)</h3>
                         <p>Algoritmo em Python para identificar a quantidade de água acumulada entre silhuetas.</p>
                         <div class="project-tech">
                             <span>Python</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/fabegalo/silhouette_water" target="_blank" class="btn small-btn">Ver Projeto</a>
-                            <a href="https://github.com/fabegalo/silhouette_water" target="_blank" class="btn small-btn github-btn"><i class="fab fa-github"></i> Código</a>
+                            <a href="https://github.com/fabegalo/silhouette_water" target="_blank" rel="noopener noreferrer" class="btn small-btn github-btn"><i class="fab fa-github" aria-hidden="true"></i> Ver Código</a>
                         </div>
                     </div>
 
@@ -86,10 +90,10 @@
 
     <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2025 fabegalo. Todos os direitos reservados.</p>
+            <p>&copy; <span id="currentYear">2026</span> fabegalo. Todos os direitos reservados.</p>
             <div class="social-links">
-                <a href="https://github.com/fabegalo" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/fabegalo" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/fabegalo" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/fabricio-galo-87516316a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
             </div>
         </div>
     </footer>
