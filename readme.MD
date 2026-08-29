@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2F81F7,100:6A11CB&height=180&section=header&text=fabegalo&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Desenvolvedor%20%C2%B7%20Engenheiro%20Mobile&descAlignY=56&descSize=18" width="100%" alt="fabegalo" />
-
-<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=2F81F7&center=true&vCenter=true&width=520&height=45&lines=Desenvolvedor+desde+2019;Engenheiro+Mobile+%7C+Android+e+iOS;Kotlin+%C2%B7+Swift+%C2%B7+Flutter;Laravel+%C2%B7+APIs+REST+%C2%B7+AWS" alt="Desenvolvedor desde 2019, Engenheiro Mobile" />
+<img src="https://raw.githubusercontent.com/fabegalo/fabegalo/main/assets/banner.svg" width="100%" alt="fabegalo — Desenvolvedor desde 2019, Engenheiro Mobile" />
 
 <br />
 
@@ -64,14 +62,9 @@ Sou graduado em Análise e Desenvolvimento de Sistemas e curso Engenharia de Sof
 
 ---
 
-## GitHub
+## Contribuições
 
 <div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=fabegalo&theme=react-dark&hide_border=true&area=true&custom_title=Atividade%20de%20contribui%C3%A7%C3%B5es" />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=fabegalo&theme=github-compact&hide_border=true&area=true&custom_title=Atividade%20de%20contribui%C3%A7%C3%B5es" width="100%" alt="Atividade de contribuições" />
-</picture>
 
 <img src="https://raw.githubusercontent.com/fabegalo/fabegalo/output/snake.svg" width="100%" alt="Snake animation" />
 
@@ -80,5 +73,3 @@ Sou graduado em Análise e Desenvolvimento de Sistemas e curso Engenharia de Sof
 <img src="https://visitor-badge.laobi.icu/badge?page_id=fabegalo.fabegalo&" alt="Visitantes" />
 
 </div>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6A11CB,100:2F81F7&height=100&section=footer" width="100%" alt="" />

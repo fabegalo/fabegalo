@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="1000" height="240" role="img" aria-label="fabegalo — Desenvolvedor desde 2019, Engenheiro Mobile">
+  <title>fabegalo — Desenvolvedor desde 2019, Engenheiro Mobile</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2F81F7"/>
+      <stop offset="55%" stop-color="#4A5BD4"/>
+      <stop offset="100%" stop-color="#6A11CB"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <clipPath id="round"><rect width="1000" height="240" rx="14"/></clipPath>
+  </defs>
+
+  <style>
+    .name {
+      font: 700 66px "Segoe UI", Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      fill: #ffffff;
+      letter-spacing: -1px;
+    }
+    .role {
+      font: 600 21px "Fira Code", "Cascadia Code", "SF Mono", Consolas, monospace;
+      fill: #ffffff;
+      opacity: 0;
+      animation: cycle 16s linear infinite;
+    }
+    .r1 { animation-delay: 0s;  }
+    .r2 { animation-delay: 4s;  }
+    .r3 { animation-delay: 8s;  }
+    .r4 { animation-delay: 12s; }
+    @keyframes cycle {
+      0%    { opacity: 0; }
+      3%    { opacity: 0.92; }
+      22%   { opacity: 0.92; }
+      25%   { opacity: 0; }
+      100%  { opacity: 0; }
+    }
+    .dot { fill: #ffffff; opacity: 0.55; }
+    @media (prefers-reduced-motion: reduce) {
+      .role { animation: none; }
+      .r1 { opacity: 0.92; }
+    }
+  </style>
+
+  <g clip-path="url(#round)">
+    <rect width="1000" height="240" fill="url(#bg)"/>
+    <path d="M0,168 C150,120 260,214 420,178 C580,142 700,206 860,166 C920,151 968,158 1000,150 L1000,240 L0,240 Z" fill="url(#wave)"/>
+    <path d="M0,196 C170,156 300,232 470,200 C640,168 760,224 900,192 C950,181 980,186 1000,182 L1000,240 L0,240 Z" fill="#ffffff" fill-opacity="0.07"/>
+    <circle cx="905" cy="62" r="86" fill="#ffffff" fill-opacity="0.05"/>
+    <circle cx="120" cy="206" r="54" fill="#ffffff" fill-opacity="0.04"/>
+
+    <text class="name" x="64" y="106">fabegalo</text>
+    <rect x="66" y="124" width="86" height="4" rx="2" fill="#ffffff" fill-opacity="0.65"/>
+
+    <g transform="translate(64,166)">
+      <text class="role r1" x="0" y="0">Desenvolvedor desde 2019</text>
+      <text class="role r2" x="0" y="0">Engenheiro Mobile · Android e iOS</text>
+      <text class="role r3" x="0" y="0">Kotlin · Swift · Flutter</text>
+      <text class="role r4" x="0" y="0">Laravel · APIs REST · AWS</text>
+    </g>
+  </g>
+</svg>
